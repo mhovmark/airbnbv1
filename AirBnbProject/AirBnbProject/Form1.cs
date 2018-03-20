@@ -447,6 +447,7 @@ namespace AirBnbProject
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Sätter zooom xmax o ymax
             double d = 100;
             bool gick = double.TryParse(textBox1.Text, out d);
             if (gick)
