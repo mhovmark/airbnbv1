@@ -124,7 +124,14 @@ namespace AirBnbProject
 
         private void btnPlot_Click(object sender, EventArgs e)
         {
-            PrintChart();
+            if (cbY.SelectedIndex != -1 || cbX.SelectedIndex != -1)
+            {
+                PrintChart();
+            }
+            else
+            {
+                MessageBox.Show("Please make your selections");
+            }
         }
 
 
@@ -147,7 +154,7 @@ namespace AirBnbProject
             string pickedGraph = CBGraph.Value;
             bool barIsPossible = true;
             //Tar reda på om Bar är möjlig
-           
+
             foreach (CbBoxItem bi in cbY.Items)
             {
                 if (CBXX.Value == bi.Value)
@@ -158,9 +165,9 @@ namespace AirBnbProject
                         if (CBYY.Value == bit.Value)
                         {
                             //Bar är inte möjlig
-                          
+
                             barIsPossible = false;
-                            if (pickedGraph=="Bar")
+                            if (pickedGraph == "Bar")
                             {
                                 MessageBox.Show("Bar is not possible");
                             }
@@ -306,7 +313,7 @@ namespace AirBnbProject
 
 
 
-            Series series = new Series(pickedCity+" "+pickedY);
+            Series series = new Series(pickedCity + " " + pickedY);
 
             //Sätter datapunkter
             if (graphHasStringValuesOnXAxis)
