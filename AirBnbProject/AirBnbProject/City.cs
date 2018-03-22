@@ -13,6 +13,8 @@ namespace AirBnbProject
         private int avgIncome;
         private int touristsPerYear;
         private List<Accommodation> accommodations;
+        private int count;
+        private double avgRoomPrice;
 
         public City()
         {

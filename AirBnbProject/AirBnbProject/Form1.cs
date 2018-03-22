@@ -11,6 +11,12 @@ using System.Windows.Forms.DataVisualization.Charting;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
+
+/*
+ * Där jag gör en ändring så kommer ja lägga till taggen #JS 
+ * Borde göra det lättare att hitta
+ */
+
 namespace AirBnbProject
 {
     public partial class Form1 : Form
@@ -31,9 +37,8 @@ namespace AirBnbProject
 
         private void LoadSQLData()
         {
-            SQLClass mySql = new SQLClass();
-            Accommodations = mySql.GetListAccomodation(this);
-
+            SQLClass mySql = new SQLClass();    // Fint namn för en SQL klass #JS
+            Accommodations = mySql.GetListAccomodation(this); 
 
 
             City amsterdam = new City
@@ -139,7 +144,7 @@ namespace AirBnbProject
 
         private void PrintChart()
         {
-
+            // Väldigt elegant lösning för att få in många olika plotar på samma "blad" #JS
 
 
             //Hämtar komboxesvalen
@@ -422,8 +427,13 @@ namespace AirBnbProject
 
         public static bool IsNumeric(string s)
         {
-            float output;
-            return float.TryParse(s, out output);
+            
+            return float.TryParse(s, out float output);
+            /*
+             * Out behöver inte ha fördeklarerade variabler så:
+             *  return float.TryParse(s, out float output);
+             *  Funkar lika bra.
+             */
         }
 
         private void cbX_SelectedIndexChanged(object sender, EventArgs e)
